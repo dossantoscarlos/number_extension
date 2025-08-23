@@ -1,5 +1,5 @@
 defmodule NumberExtensionWeb.PageController do
-  alias Plug.HTML
+  
   use NumberExtensionWeb, :controller
 
   def home(conn, params) do
