@@ -7,9 +7,14 @@
 # General application configuration
 import Config
 
+config :number_extension, ecto_repos: [NumberExtension.Repo]
+
 config :number_extension, NumberExtension.Repo,
   adapter: Ecto.Adapters.SQLite3,
   generators: [timestamp_type: :utc_datetime]
+
+config :ecto_sql,
+  load_apps: [postgrex: false]
 
 # Configures the endpoint
 config :number_extension, NumberExtensionWeb.Endpoint,
@@ -56,8 +61,6 @@ config :tailwind,
 config :logger, :default_formatter,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
-
-
 
 # Use Jason for JSON parsing in Phoenix
 

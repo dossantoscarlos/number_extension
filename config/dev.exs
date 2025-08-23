@@ -2,10 +2,7 @@ import Config
 
 # Configure your database
 config :number_extension, NumberExtension.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "number_extension_dev",
+  database: "number_extension_dev.db",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

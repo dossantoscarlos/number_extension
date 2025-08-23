@@ -1,5 +1,4 @@
 defmodule NumberExtensionWeb.PageController do
-  
   use NumberExtensionWeb, :controller
 
   def home(conn, params) do
