@@ -7,8 +7,8 @@
 # General application configuration
 import Config
 
-config :number_extension,
-  ecto_repos: [NumberExtension.Repo],
+config :number_extension, NumberExtension.Repo,
+  adapter: Ecto.Adapters.SQLite3,
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
