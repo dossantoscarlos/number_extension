@@ -1,0 +1,23 @@
+<Layouts.flash_group flash={@flash} />
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold mb-6">Welcome to Number Extension!</h1>
+  <p class="text-lg mb-4">
+    This application provides various number-related functionalities and extensions.
+  </p>
+  <div class="mt-12">
+    <h2 class="text-2xl font-bold mb-2">Enter a Number</h2>
+    <form action={~p"/"} method="post" class="flex flex-col space-y-4">
+      <input type="hidden" name="_csrf_token" value={@csrf_token} />
+      <input type="text" name="number" placeholder="Enter a number" class="border border-gray-300 p-2 rounded" />
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Submit
+      </button>
+    </form>
+
+    <div class="mt-4">
+      <h2 class="text-2xl font-bold mb-2">Results</h2>
+      <span>{@result || "No results yet"}</span>
+
+    </div>
+  </div>
+</div>
