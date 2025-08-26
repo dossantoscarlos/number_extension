@@ -19,3 +19,7 @@ config :logger, level: :info
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
+
+config :number_extension, NumberExtension.Repo,
+  database: "number_extension_prod.db",
+  pool_size: 5

@@ -24,8 +24,7 @@ config :ex_cldr,
   cacertfile: CAStore.file_path()
 
 if config_env() == :prod do
-  database_url =
-    System.get_env("DATABASE_URL") || "number_extension.db"
+  database_url = System.get_env("DATABASE_URL") || "number_extension_prod.db"
 
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
