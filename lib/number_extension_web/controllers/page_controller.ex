@@ -1,6 +1,7 @@
 defmodule NumberExtensionWeb.PageController do
   use NumberExtensionWeb, :controller
 
+  @spec home(Plug.Conn.t(), any()) :: Plug.Conn.t()
   def home(conn, params) do
     result =
       case conn.method do
@@ -15,7 +16,6 @@ defmodule NumberExtensionWeb.PageController do
     case Map.get(params, "number") do
       nil ->
         nil
-
       number_string ->
         convert_number_to_words(number_string)
     end
@@ -28,7 +28,7 @@ defmodule NumberExtensionWeb.PageController do
       %{ :texto => String.upcase(text), :numero => number_string }
     rescue
       ArgumentError ->
-        "Entrada inválida. Por favor, insira um número."
+        %{ :error => "Entrada inválida. Por favor, insira um número." }
     end
   end
 end

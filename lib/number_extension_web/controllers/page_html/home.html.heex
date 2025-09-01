@@ -15,7 +15,8 @@
     <form action={~p"/"} method="post" class="space-y-4">
       <input type="hidden" name="_csrf_token" value={@csrf_token} />
       <input
-        type="text"
+        required
+        type="number"
         name="number"
         placeholder="Enter a number"
         class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
@@ -24,7 +25,13 @@
         class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg transition"
       >Enviar</button>
     </form>
-
+    
+    <%= if Map.has_key?(@result || %{}, :error) do %>
+      <div class="bg-red-100 mt-5 border border-red-300 text-red-700 p-4 rounded-lg">
+        <%= Map.get(@result || %{}, :error) %>
+      </div>
+    <% end %>
+    
     <!-- Resultado -->
     <div class="mt-5">
       <h2 class="text-xl font-semibold mb-4 text-gray-800">Result</h2>
