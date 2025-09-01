@@ -1,5 +1,7 @@
 # NumberExtension
 
+Objetivo: Converte numeral para extenso.
+
 To start your Phoenix server:
 
 * Run `mix setup` to install and setup dependencies
