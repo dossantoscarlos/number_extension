@@ -37,3 +37,6 @@ npm-debug.log
 
 _build
 .elixir_ls/
+
+*.db
+*.db*
