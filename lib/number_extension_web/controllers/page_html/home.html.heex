@@ -31,21 +31,20 @@
     <div class="mt-5">
       <h2 class="text-xl font-semibold mb-4 text-gray-800">Result</h2>
       <div class="flex items-center justify-between p-4">
-          <%= if @result.numero do %>
-            Numero fornecido: <span class="text-gray-800 font-medium text-lg">
-              {@result.numero || ""}
-            </span>
-          <% end %>
+        <span>Número fornecido: </span>
+        <span>
+          <%= Map.get(@result || %{}, :numero, "Não informado") %>
+        </span>
       </div>
       <br/>
       <div class="flex items-center justify-between bg-green-100 border border-green-300 rounded-lg p-4">
-        
         <span class="text-gray-800 font-medium text-lg">
-          {@result.texto || "No results yet"}
+          <%= Map.get(@result || %{}, :texto, "Forneça um numero...") %>
         </span>
         <button
           phx-click="copy_result"
-          phx-value-result={@result.texto || ""}
+          phx-value-result={Map.get(@result || %{}, :texto, " ")}
+    
           class="ml-4 bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md transition"
         >
           Copy
@@ -54,16 +53,3 @@
     </div>
   </div>
 </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const copyButtons = document.querySelectorAll("[phx-click='copy_result']");
-    copyButtons.forEach((button) => {
-      button.addEventListener("click", function () {
-        const result = button.getAttribute("phx-value-result");
-        navigator.clipboard.writeText(result).then(() => {
-          alert("Result copied to clipboard!");
-        });
-      });
-    });
-  });
-</script>
