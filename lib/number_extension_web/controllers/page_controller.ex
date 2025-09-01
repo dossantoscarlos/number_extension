@@ -25,7 +25,7 @@ defmodule NumberExtensionWeb.PageController do
     try do
       number = String.to_integer(number_string)
       {:ok, text} = NumberExtension.Cldr.Number.to_string(number, format: :spellout)
-      "O numero #{number_string} é por extenso => #{String.upcase(text)}"
+      %{ :texto => String.upcase(text), :numero => number_string }
     rescue
       ArgumentError ->
         "Entrada inválida. Por favor, insira um número."

@@ -81,3 +81,14 @@ if (process.env.NODE_ENV === "development") {
   })
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const copyButtons = document.querySelectorAll("[phx-click='copy_result']");
+  copyButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const result = button.getAttribute("phx-value-result");
+      navigator.clipboard.writeText(result).then(() => {
+        alert("Result copied to clipboard!");
+      });
+    });
+  });
+});
