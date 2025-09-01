@@ -4,7 +4,6 @@
                         'Elixir.Ecto.Adapter.Structure',
                         'Elixir.Ecto.Adapters.MyXQL',
                         'Elixir.Ecto.Adapters.Postgres',
-                        'Elixir.Ecto.Adapters.Postgres.Connection',
                         'Elixir.Ecto.Adapters.SQL',
                         'Elixir.Ecto.Adapters.SQL.Application',
                         'Elixir.Ecto.Adapters.SQL.Connection',

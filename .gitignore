@@ -35,3 +35,5 @@ number_extension-*.tar
 npm-debug.log
 /assets/node_modules/
 
+_build
+.elixir_ls/
